@@ -23,7 +23,7 @@ const ScreenStack = StackNavigator(
     headerMode: 'none'
   }
 );
-//TODO: Delete Header... headerMode: 'none'
+
 
 
 export default class App extends Component<Props> {
@@ -31,3 +31,10 @@ export default class App extends Component<Props> {
     return <ScreenStack />;
   }
 }
+
+const styles = StyleSheet.create({
+  mainAppContainer: {
+    flex: 1,
+    backgroundColor: 'orange'
+  }
+});

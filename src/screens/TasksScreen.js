@@ -9,6 +9,11 @@ import {
   StyleSheet
 } from 'react-native';
 
+import TasksHeader from './../components/TasksHeader';
+import TaskList from './../components/TaskList';
+
+
+
 export default class TasksScreen extends Component<Props>{
 
   constructor(props){
@@ -16,16 +21,20 @@ export default class TasksScreen extends Component<Props>{
 
     this.state = {
       tasks: [
-        { id: 1, title: 'Comprar Leche', completed: false },
-        { id: 2, title: 'Sacar la basura', completed: false },
+        { id: 1, title: 'Wuawis', completed: false },
+        { id: 2, title: 'Trapear', completed: false },
         { id: 3, title: 'Lava los platos', completed: false },
-        { id: 4, title: 'Organizar la peda', completed: false },
-        { id: 5, title: 'Soportar la cruda', completed: false },
-        { id: 6, title: 'Netflix and Chill', completed: false }
+        { id: 4, title: 'Korn flakes', completed: false },
+        { id: 5, title: 'Ligar morritas', completed: false },
+        { id: 6, title: 'Hacer un bong', completed: true }
       ]
     }
 
   }
+
+
+
+
 
   render(){
     return(
@@ -38,16 +47,9 @@ export default class TasksScreen extends Component<Props>{
         </View>
 
         <View style={styles.tasksContainer}>
+              <TaskList tasks={this.state.tasks}/>
 
-          <View style={styles.taskContainer}>
-            <Image style={styles.taskIcon} source={require('./../images/icon-circle.png')}/>
-            <Text style={styles.taskText}>Ajustar Estilos</Text>
-          </View>
 
-          <View style={styles.taskContainer}>
-            <Image style={styles.taskIcon} source={require('./../images/icon-circle.png')}/>
-            <Text style={styles.taskText}>Ajustar Estilos</Text>
-          </View>
 
         </View>
       </View>
@@ -60,7 +62,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   headerContainer: {
-    backgroundColor: 'blue',
+    backgroundColor: 'red',
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
@@ -81,7 +83,7 @@ const styles = StyleSheet.create({
     marginTop: 8
   },
   tasksContainer: {
-    backgroundColor: 'green',
+    backgroundColor: 'white',
     flex: 1
   },
   taskContainer: {
